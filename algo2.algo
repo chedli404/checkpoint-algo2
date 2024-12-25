@@ -1,0 +1,16 @@
+PROCEDURE insertion (t: ARRAY_OF INTEGER; n: INTEGER)
+VAR
+    i, s, k: INTEGER;
+BEGIN
+    FOR i FROM 2 TO n DO
+        k := t[i];           
+        s := i - 1;
+
+        
+        WHILE (s > 0 AND t[s] > k) DO
+            t[s + 1] := t[s];   
+            s := s - 1;
+        END_WHILE
+        t[s + 1] := k;
+    END_FOR
+END
